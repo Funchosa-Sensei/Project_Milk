@@ -1,0 +1,74 @@
+@use '../variables' as *;
+
+.theme-switcher {
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+}
+
+.theme-switcher__btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 30px;
+    cursor: pointer;
+    width: 60px;
+    height: 30px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 0 5px;
+
+    &::before {
+        content: '';
+        position: absolute;
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        background-color: $color-white;
+        left: 3px;
+        transition: transform 0.3s ease;
+    }
+
+    .theme-switcher__icon {
+        width: 18px;
+        height: 18px;
+        position: absolute;
+        transition: opacity 0.3s ease;
+        path {
+            fill: $color-blue;
+        }
+
+        &--sun {
+            left: 6px;
+            opacity: 1;
+        }
+        &--moon {
+            right: 6px;
+            opacity: 0;
+        }
+    }
+}
+
+.dark-theme .theme-switcher__btn {
+    background: rgba(0, 0, 0, 0.2);
+    border-color: rgba($color-white, 0.2);
+    
+    &::before {
+        transform: translateX(30px);
+        background-color: #f1c40f;
+    }
+
+    .theme-switcher__icon {
+        path { fill: $dark-text; }
+        &--sun { opacity: 0; }
+        &--moon { opacity: 1; }
+    }
+}
+
+@media (max-width: $breakpoint-md) {
+    .theme-switcher {
+        order: 2; 
+        margin-left: auto; 
+        margin-right: 15px;
+    }
+}

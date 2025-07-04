@@ -1,0 +1,103 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+// Подключение шрифтов
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Nunito+Sans:wght@400;600&family=Inter:wght@400;500;600&display=swap');
+// @font-face { ... }
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', $font-main;
+    font-size: 16px;
+    line-height: 1.6;
+    color: $color-text-dark;
+    background-color: #fdfdfd; 
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Clip', $font-headings;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+.container {
+    max-width: 1640px;
+    margin: 0 auto;
+    padding: 0 40px;
+    width: 100%;
+}
+
+.main {
+    background-color: $color-white;
+}
+
+// Анимации появления
+.hero, .popular, .traditions, .hits, .recipes, .geography, .contacts-section {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.hero.in-view, .popular.in-view, .traditions.in-view, .hits.in-view, .recipes.in-view, .geography.in-view, .contacts-section.in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+@media (max-width: $breakpoint-sm) {
+    .container {
+        padding: 0 20px;
+    }
+}
+
+/* ОБНОВЛЕННЫЙ ОБЩИЙ КЛАСС ДЛЯ ЗАГОЛОВКОВ */
+.section-title {
+    font-size: 36px;
+    color: $color-text-dark;
+    text-align: center;
+    margin-bottom: 60px;
+    font-family: 'Clip', $font-headings; // Добавим шрифт для консистентности
+    font-weight: 400;                 // Добавим font-weight для консистентности
+    letter-spacing: 0.02em;           // Добавим letter-spacing для консистентности
+
+
+    &--left {
+        text-align: left;
+    }
+
+    a {
+        color: $color-green;
+        transition: color 0.3s;
+        &:hover {
+            color: darken($color-green, 10%);
+        }
+    }
+}
+
+/* Адаптивность для заголовков */
+@media (max-width: $breakpoint-sm) {
+    .section-title {
+        font-size: 28px;
+        margin-bottom: 40px;
+    }
+}

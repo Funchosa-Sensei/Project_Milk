@@ -1,0 +1,128 @@
+@use '../variables' as *;
+
+.recipes {
+    padding: 80px 0;
+}
+
+.recipes__container {
+    position: relative; 
+}
+
+.recipes__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.recipes__title {
+    font-size: 32px;
+    font-weight: 800;
+    color: $color-text-dark;
+}
+
+.recipes__filter {
+    display: flex;
+    gap: 10px;
+}
+
+.recipes__filter-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    border: none;
+    background-color: #f0f0f0;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    svg {
+      width: 18px;
+      height: 18px;
+    }
+    
+    path {
+        fill: $color-text-light;
+        transition: fill 0.3s ease;
+    }
+
+    &.is-active {
+        background-color: $color-green;
+        color: $color-white;
+        path {
+            fill: $color-white;
+        }
+    }
+}
+
+.recipes__slider {
+    padding: 0 40px; 
+}
+
+.recipes-button-next,
+.recipes-button-prev {
+    width: 50px;
+    height: 50px;
+    background-color: $color-white;
+    border-radius: 50%;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    cursor: pointer;
+
+    &::after {
+        font-family: 'swiper-icons';
+        font-size: 18px;
+        color: $color-text-light;
+        font-weight: bold;
+    }
+
+    &:hover {
+        background-color: $color-green;
+        transform: translateY(-50%) scale(1.1);
+        &::after {
+            color: $color-white;
+        }
+    }
+}
+
+.recipes-button-prev {
+    left: 0;
+    &::after { content: 'prev'; }
+}
+.recipes-button-next {
+    right: 0;
+    &::after { content: 'next'; }
+}
+
+
+@media (max-width: $breakpoint-md) {
+    .recipes__header {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
+    .recipes__filter {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+@media (max-width: $breakpoint-sm) {
+     .recipes {
+        padding: 60px 0;
+    }
+    .recipes__slider {
+        padding: 0;
+    }
+    .recipes__title {
+        font-size: 28px;
+    }
+    .recipes-button-next, .recipes-button-prev {
+        display: none;
+    }
+}

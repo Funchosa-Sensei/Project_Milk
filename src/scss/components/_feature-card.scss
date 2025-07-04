@@ -1,0 +1,39 @@
+@use '../variables' as *;
+
+.feature-card {
+    background: rgba(255, 255, 255, 0.15);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 25px 20px;
+    text-align: center;
+    color: $color-white;
+    flex: 1;
+    min-width: 220px; 
+    transition: background 0.3s ease;
+
+    &:hover { background: rgba(255, 255, 255, 0.25); }
+}
+.feature-card__icon-wrapper {
+    width: 50px;
+    height: 50px;
+    margin: 0 auto 15px auto;
+    background: radial-gradient(circle, #FFFFFF 0%, rgba(255, 255, 255, 0.5) 100%);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.feature-card__icon {
+    height: 24px;
+    width: 24px;
+    path { fill: $color-blue; }
+}
+.feature-card__title {
+    font-size: 16px;
+    line-height: 1.4;
+    font-weight: 600;
+    font-family: 'Inter', $font-main;
+    margin: 0;
+}

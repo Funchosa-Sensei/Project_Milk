@@ -1,0 +1,94 @@
+@use 'variables' as *;
+
+body.dark-theme {
+    background-color: $dark-bg;
+    color: $dark-text;
+
+    .wrapper {
+        background-color: $dark-bg;
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
+    }
+    
+    .header {
+        background-color: $dark-primary;
+    }
+
+    .main {
+        background-color: $dark-bg;
+    }
+
+    .hero {
+        background: linear-gradient(180deg, rgba(15, 52, 96, 0.8) 0%, rgba(22, 33, 62, 0.7) 79.02%), $dark-primary;
+    }
+    .traditions {
+        background-color: #2c5c0b; 
+        &__bg-wave { background-color: $dark-bg; }
+    }
+    .geography {
+        background-image: none; 
+        background-color: $dark-primary;
+        .geography__content, .geography__map-wrapper {
+             background: rgba(22, 33, 62, 0.5);
+             border-color: rgba(255, 255, 255, 0.1);
+        }
+    }
+
+    .popular, .hits, .recipes, .contacts-section {
+        background-color: $dark-bg;
+    }
+
+    h1, h2, h3, h4, h5, h6, .popular__title, .hits__title, .recipes__title, .contacts-section__title {
+        color: $dark-text;
+    }
+    .product-card__title, .hit-card__title {
+        color: $dark-text;
+    }
+     .product-card__description, .hit-card__info {
+        color: $dark-text-muted;
+    }
+    .btn--outline {
+        color: $dark-text;
+        border-color: rgba($dark-text, 0.5);
+        &:hover {
+            color: $dark-primary;
+            background-color: $dark-secondary;
+            border-color: $dark-secondary;
+        }
+    }
+
+    .hit-card {
+        background: $dark-surface;
+        border-color: rgba($color-white, 0.1);
+    }
+    .recipes__filter-btn {
+        background-color: $dark-surface;
+        color: $dark-text;
+        path { fill: $dark-text-muted; }
+        &.is-active {
+            background-color: $dark-secondary;
+            color: $color-white;
+            path { fill: $color-white; }
+        }
+    }
+
+    .contacts-info {
+        background-color: $dark-surface;
+        border-color: rgba($color-white, 0.1);
+        p, a, h4 { color: $dark-text; }
+    }
+    .feedback-form {
+        background-color: $dark-surface;
+    }
+    .feedback-form__group {
+        input, textarea {
+            background: $dark-bg;
+            color: $dark-text;
+            border-color: rgba($color-white, 0.2);
+        }
+    }
+
+    .footer {
+        .footer__main { background-color: #111; }
+        .footer__bottom { background-color: #000; }
+    }
+}

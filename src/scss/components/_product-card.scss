@@ -1,0 +1,55 @@
+@use "sass:color";
+@use '../variables' as *;
+
+.product-card {
+    background-color: transparent;
+    text-align: center;
+    padding: 30px 20px;
+    position: relative;
+    z-index: 5;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    &__bg-shape {
+        position: absolute;
+        top: 50px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        z-index: -1;
+        
+        &--green { background-color: #eaf8d8; }
+        &--blue { background-color: #e2f1ff; }
+        &--pink { background-color: #ffe9e9; }
+        &--beige { background-color: #fff6e4; }
+    }
+    
+    &__image {
+        max-height: 160px;
+        margin-bottom: 25px;
+        transition: transform 0.4s ease;
+    }
+
+    &__title {
+        font-size: 22px;
+        color: $color-text-dark;
+        margin-bottom: 10px;
+    }
+
+    &__description {
+        font-size: 14px;
+        color: $color-text-light;
+        line-height: 1.5;
+        margin-bottom: 25px;
+        flex-grow: 1;
+    }
+
+    &:hover .product-card__image {
+        transform: scale(1.05) translateY(-5px);
+    }
+}

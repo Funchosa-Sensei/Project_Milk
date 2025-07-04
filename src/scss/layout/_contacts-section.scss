@@ -1,0 +1,207 @@
+@use '../variables' as *;
+
+.contacts-section {
+    padding: 80px 0;
+    background-color: $color-white;
+}
+
+// Стили для заголовка, скопированные из .hits__title
+.contacts-section__title {
+    font-size: 32px;
+    font-weight: 800;
+    margin-bottom: 40px;
+    color: $color-text-dark;
+}
+
+.contacts-section__wrapper {
+    display: grid;
+    grid-template-columns: 389px 1fr;
+    gap: 30px;
+    align-items: start;
+}
+
+.contacts-info {
+    border: 1px solid rgba(28, 28, 28, 0.2);
+    border-radius: 40px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.contacts-info__title {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.contacts-info__group {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.contacts-info__item {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+}
+
+.contacts-info__icon-wrapper {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    svg {
+        width: 100%;
+        height: 100%;
+        path {
+            fill: $color-green;
+        }
+    }
+}
+
+.contacts-info__details {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 16px;
+    line-height: 1.5;
+    
+    h4 {
+        font-size: 18px;
+        font-weight: 600;
+        margin: 0;
+    }
+    p, a {
+        margin: 0;
+        color: $color-text-dark;
+        text-decoration: none;
+    }
+}
+
+.contacts-info__all-link {
+    font-size: 16px;
+    border-bottom: 1px dashed $color-text-dark;
+    padding-bottom: 4px;
+    align-self: flex-start;
+    margin-top: auto;
+}
+
+.feedback-form {
+    background-color: rgba($color-light-blue, 0.3);
+    border-radius: 40px;
+    padding: 40px;
+    position: relative;
+    overflow: hidden;
+}
+
+.feedback-form__bg {
+    position: absolute;
+    width: 690px;
+    height: 690px;
+    left: 495px;
+    top: -145px;
+    background-color: rgba($color-blue, 0.2);
+    border-radius: 50%;
+    z-index: -1;
+}
+
+.feedback-form__title {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 32px;
+}
+
+.feedback-form__row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 24px;
+}
+
+.feedback-form__group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 24px;
+    position: relative; 
+    
+    label {
+        font-weight: 500;
+    }
+    
+    input, textarea {
+        width: 100%;
+        padding: 16px;
+        border: 1px solid transparent; 
+        border-radius: 8px;
+        font-size: 16px;
+        font-family: inherit;
+        background: $color-white;
+        transition: border-color 0.3s;
+        &::placeholder {
+            color: $color-text-dark;
+            opacity: 0.4;
+        }
+    }
+    
+    textarea {
+        height: 142px;
+        resize: none;
+    }
+
+    .feedback-form__error-message {
+        color: #d9534f;
+        font-size: 12px;
+        position: absolute;
+        bottom: -20px;
+        left: 0;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s, visibility 0.3s;
+    }
+
+    &.is-invalid {
+        input, textarea {
+            border-color: #d9534f;
+        }
+        .feedback-form__error-message {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+}
+
+.feedback-form .btn {
+    margin-bottom: 24px;
+}
+
+.feedback-form__consent {
+    font-size: 12px;
+    opacity: 0.5;
+}
+
+@media (max-width: $breakpoint-md) {
+    .contacts-section__wrapper {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: $breakpoint-sm) {
+    .contacts-section {
+        padding: 60px 0;
+    }
+    // Адаптивность для заголовка, как в .hits__title
+    .contacts-section__title {
+        font-size: 28px;
+        margin-bottom: 40px;
+        text-align: center;
+    }
+    .feedback-form__row {
+        grid-template-columns: 1fr;
+        gap: 0; 
+    }
+    .contacts-info, .feedback-form {
+        padding: 30px;
+        border-radius: 30px;
+    }
+}
