@@ -1,11 +1,10 @@
 @use '../variables' as *;
 
 .contacts-section {
-    padding: 80px 0;
+    padding: 50px 80px 50px;
     background-color: $color-white;
 }
 
-// Стили для заголовка, скопированные из .hits__title
 .contacts-section__title {
     font-size: 32px;
     font-weight: 800;
@@ -190,7 +189,6 @@
     .contacts-section {
         padding: 60px 0;
     }
-    // Адаптивность для заголовка, как в .hits__title
     .contacts-section__title {
         font-size: 28px;
         margin-bottom: 40px;

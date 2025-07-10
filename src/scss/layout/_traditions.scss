@@ -1,24 +1,31 @@
 @use '../variables' as *;
 
 .traditions {
-    padding: 100px 0;
+    padding: 100px 80px 60px;
     position: relative;
     overflow: hidden;
     background-color: #7fbf2f; 
+}
 
-    &::before {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        height: 100%; 
-        background-image: url('../assets/images/traditions-bg.jpg'); 
-        background-size: cover;
-        background-position: center bottom;
-        opacity: 0.4;
-    }
+.traditions::after {
+    content: '';
+    position: absolute;
+    top: 150px;
+    right: 20px;
+    bottom: 0px;
+    width: 60%;
+    z-index: 1; 
 
+    background-image: url('../assets/images/traditions-scenery.png');
+    background-size: cover;
+    background-position: center;
+
+    -webkit-mask-image: url('../assets/images/union-shape1.png');
+    mask-image: url('../assets/images/union-shape1.png');
+    -webkit-mask-size: 100% 100%; 
+    mask-size: 100% 100%;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
 }
 
 .traditions__container {
@@ -26,13 +33,13 @@
     justify-content: space-between;
     align-items: center;
     position: relative;
+    z-index: 3; 
     gap: 40px;
 }
 
 .traditions__content {
-    max-width: 620px;
+    max-width: 540px;
     color: $color-white;
-    position: relative;
     flex-shrink: 0;
 }
 
@@ -52,80 +59,35 @@
     text-shadow: 0 1px 5px rgba(0,0,0,0.2); 
 }
 
-.traditions__lines {
-    position: absolute;
-    right: 100%;
-    top: 50px;
-    width: 350px;
-    height: 200px;
-    margin-right: 20px;
-}
-
 .traditions__features { 
     display: flex; 
     gap: 20px; 
 }
 
 .traditions__image-wrapper {
-    width: 45%;
-    max-width: 550px; 
-    align-self: flex-end;
+    width: 70%;
+    max-width: 1500px; 
+    position: absolute; 
+    right: -9%; 
+    bottom: -200px;
+    z-index: 2; 
 }
 
-.feature-card {
-    width: 160px;
-    height: 160px;
-    background: rgba(244, 255, 246, 0.404);
-    -webkit-backdrop-filter: blur(8px);
-    backdrop-filter: blur(20px);
-    border: 1px solid rgba(211, 12, 12, 0.2);
-    padding: 50px;
-    text-align: center;
-    color: $color-white;
-    position: relative;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end; 
-    
-    // Создаем "жидкую" форму
-    border-radius: 43% 57% 63% 37% / 54% 38% 62% 46%;
-    transition: border-radius 0.4s ease-in-out;
-    
-    &:hover {
-        border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+@media (max-width: $breakpoint-lg) {
+    .traditions__image-wrapper {
+        width: 40%;
+        right: 2%;
     }
 }
 
-.feature-card__icon-blob {
-    width: 700px;
-    height: 210px;
-    position: absolute;
-    top: -30px;
-    left: -20px;
-    border-radius: 50%;
-    filter: blur(28px); 
-    opacity: 0.6;
-}
-
-.feature-card--blue .feature-card__icon-blob { background-color: #0088ff; }
-.feature-card--yellow .feature-card__icon-blob { background-color: #ffab04; }
-.feature-card--green .feature-card__icon-blob { background-color: #ff001e; }
-
-
-.feature-card__title {
-    font-size: 16px;
-    line-height: 1.4;
-    font-weight: 600;
-    font-family: 'Inter', $font-main;
-    margin: 0;
-    position: relative; 
-    z-index: 2;
-}
-
-
-// --- Адаптивность ---
 @media (max-width: $breakpoint-md) {
+    .traditions::after { 
+        width: 120%;
+        height: 70%;
+        right: -10%;
+        top: auto;
+        bottom: -15%;
+    }
     .traditions__container {
         flex-direction: column;
         text-align: center;
@@ -140,24 +102,24 @@
         justify-content: center;
         flex-wrap: wrap;
     }
-    .traditions__lines {
-        display: none; 
-    }
     .traditions__image-wrapper {
+        position: relative;
         width: 80%;
+        max-width: 400px;
         margin-top: 30px;
+        order: -1;
+        z-index: 1;
     }
 }
 
 @media (max-width: $breakpoint-sm) {
     .traditions {
-        padding: 80px 20px;
+        padding: 60px 20px;
     }
     .traditions__title {
         font-size: 28px;
     }
-    .feature-card {
-        width: 140px;
-        height: 140px;
+    .traditions__features {
+        gap: 15px;
     }
 }

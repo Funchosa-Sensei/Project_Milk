@@ -40,10 +40,10 @@ import recipeKraffinImg from '../assets/images/recipe-kraffin.png';
 
 // --- ДАННЫЕ ДЛЯ СЛАЙДЕРОВ ---
 const popularData = [
-    { imgSrc: productTvorogImg, title: 'Творог', desc: 'Улучшает жировой обмен...', bg: 'green' },
-    { imgSrc: productAyranImg, title: 'Айран', desc: 'Стимулирует пищеварение...', bg: 'blue' },
-    { imgSrc: productMilkImg, title: 'Молоко', desc: 'Улучшает работу иммунной...', bg: 'pink' },
-    { imgSrc: productYogurtImg, title: 'Йогурт', desc: 'Улучшает работу...', bg: 'beige' },
+    { imgSrc: productTvorogImg, title: 'Творог', desc: 'Улучшает жировой обмен, профилактика заболеваний сердца и сосудов', bg: 'green' },
+    { imgSrc: productAyranImg, title: 'Айран', desc: 'Стимулирует пищеварение, улучшает микрофлору кишечника', bg: 'blue' },
+    { imgSrc: productMilkImg, title: 'Молоко', desc: 'Улучшает работу иммунной системы, понижает кровяное давление и еще...', bg: 'pink' },
+    { imgSrc: productYogurtImg, title: 'Йогурт', desc: 'Улучшает работу иммунной системы, понижает кровяное давление и тд', bg: 'beige' },
 ];
 const hitsData = [
     { imgSrc: hitSmetanaImg, title: 'Сметана 20%', weight: '200 г', shelfLife: '14 суток' },
@@ -97,8 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (container) container.innerHTML = data.map(html).join('');
     };
     
-    generateSlides('.popular__slider', popularData, d => `<div class="swiper-slide"><div class="product-card"><div class="product-card__bg-shape product-card__bg-shape--${d.bg}"></div><img class="product-card__image" src="${d.imgSrc}" alt="${d.title}"><h3 class="product-card__title">${d.title}</h3><p class="product-card__description">${d.desc}</p><a href="#" class="btn btn--outline">Смотреть каталог</a></div></div>`);
-    generateSlides('.hits__slider', hitsData, d => `<div class="swiper-slide"><div class="hit-card">${d.gost ? '<svg class="hit-card__gost" viewBox="0 0 100 60"><rect width="100" height="60" rx="15" fill="#00A99D"/><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="white">ГОСТ</text></svg>' : ''}<img class="hit-card__image" src="${d.imgSrc}" alt="${d.title}"><h3 class="hit-card__title">${d.title}</h3><ul class="hit-card__info"><li><svg class="hit-card__icon" viewBox="0 0 24 24"><path d="M19 12h-2V8h-2v4h-2V8h-2v4H9V8H7v4H5V8H3v8h2v-2h2v2h2v-2h2v2h2v-2h2v2h2v-4h2v-2z"></path></svg>Упаковка: ${d.weight}</li><li><svg class="hit-card__icon" viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"/><path d="M12.5 7H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>Срок годности: ${d.shelfLife}</li></ul></div></div>`);
+generateSlides('.popular__slider', popularData, d => `<div class="swiper-slide"><div class="product-card product-card--${d.bg}"><img class="product-card__image" src="${d.imgSrc}" alt="${d.title}"><h3 class="product-card__title">${d.title}</h3><p class="product-card__description">${d.desc}</p><a href="#" class="btn btn--outline">Смотреть каталог</a></div></div>`);    generateSlides('.hits__slider', hitsData, d => `<div class="swiper-slide"><div class="hit-card">${d.gost ? '<svg class="hit-card__gost" viewBox="0 0 100 60"><rect width="100" height="60" rx="15" fill="#00A99D"/><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="white">ГОСТ</text></svg>' : ''}<img class="hit-card__image" src="${d.imgSrc}" alt="${d.title}"><h3 class="hit-card__title">${d.title}</h3><ul class="hit-card__info"><li><svg class="hit-card__icon" viewBox="0 0 24 24"><path d="M19 12h-2V8h-2v4h-2V8h-2v4H9V8H7v4H5V8H3v8h2v-2h2v2h2v-2h2v2h2v-2h2v2h2v-4h2v-2z"></path></svg>Упаковка: ${d.weight}</li><li><svg class="hit-card__icon" viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"/><path d="M12.5 7H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>Срок годности: ${d.shelfLife}</li></ul></div></div>`);
     
     let recipesSwiper;
     const initRecipesSwiper = (data) => {

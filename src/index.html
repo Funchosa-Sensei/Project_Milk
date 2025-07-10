@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Молкомбинат "Адыгейский"</title>
 </head>
+
 <body>
     <div class="wrapper">
         <header class="header">
@@ -40,8 +42,9 @@
         </header>
 
         <main class="main">
+          <div class="container main__container">
             <section class="hero" id="home">
-                <div class="container hero__container">
+                <div class="hero__container">
                     <div class="hero__main-content">
                         <div class="hero__content">
                             <h1 class="hero__title">ЗАО «МОЛКОМБИНАТ «АДЫГЕЙСКИЙ»</h1>
@@ -59,39 +62,32 @@
             </section>
 
             <section class="popular" id="catalog">
-                <div class="container popular__container">
+                <div class="popular__container">
                     <h2 class="popular__title">Популярные линейки ›</h2>
                     <div class="swiper popular__slider">
                         <div class="swiper-wrapper"></div>
                     </div>
-                    <div class="swiper-button-next popular-button-next"></div><div class="swiper-button-prev popular-button-prev"></div>
+                    <div class="swiper-button-next popular-button-next"></div>
+                    <div class="swiper-button-prev popular-button-prev"></div>
                 </div>
             </section>
             
-            <section class="traditions" id="about">
-                <div class="traditions__bg-wave"></div>
-                <div class="container traditions__container">
+            <section class="traditions">
+                <div class="traditions__container">
                     <div class="traditions__content">
                         <h2 class="traditions__title">ТРАДИЦИОННАЯ РЕЦЕПТУРА<br>И ВКЛАД В ЗДОРОВОЕ<br>БУДУЩЕЕ ПОКОЛЕНИЙ</h2>
                         <p class="traditions__description">Мы готовы предложить вам традиционные продукты под торговой маркой «Майкопская молочная продукция»: молоко, кефир, сметану, творог, ряженку, айран, которые отличаются небольшим сроком годности.</p>
-                        
-                        <svg class="traditions__lines" viewBox="0 0 350 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M349 1C258.333 3.33333 113.8 24.9 113.5 106.5" stroke="white" stroke-opacity="0.5" stroke-width="2" stroke-dasharray="4 4"/>
-                            <path d="M349 1C279.833 2.5 158.3 18.1 158 84" stroke="white" stroke-opacity="0.5" stroke-width="2" stroke-dasharray="4 4"/>
-                            <path d="M349 1C288.667 3.33333 178.1 22.8 178 95.5" stroke="white" stroke-opacity="0.5" stroke-width="2" stroke-dasharray="4 4"/>
-                        </svg>
-
                         <div class="traditions__features">
-                            <div class="feature-card feature-card--blue">
-                                <div class="feature-card__icon-blob"></div>
+                            <div class="feature-card">
+                                <img class="feature-card__icon" src="./assets/images/feature-blob-1.png" alt="Экологическая чистота">
                                 <h3 class="feature-card__title">Экологическая<br>чистота</h3>
                             </div>
-                            <div class="feature-card feature-card--yellow">
-                                <div class="feature-card__icon-blob"></div>
+                            <div class="feature-card">
+                                <img class="feature-card__icon" src="./assets/images/feature-blob-2.png" alt="Традиционные технологии">
                                 <h3 class="feature-card__title">Традиционные технологии<br>производства</h3>
                             </div>
-                            <div class="feature-card feature-card--green">
-                                <div class="feature-card__icon-blob"></div>
+                            <div class="feature-card">
+                                <img class="feature-card__icon" src="./assets/images/feature-blob-3.png" alt="Натуральные ингредиенты">
                                 <h3 class="feature-card__title">Натуральные<br>ингредиенты</h3>
                             </div>
                         </div>
@@ -103,17 +99,18 @@
             </section>
 
             <section class="hits">
-                <div class="container hits__container">
+                <div class="hits__container">
                     <h2 class="hits__title">Хиты продаж ›</h2>
                     <div class="swiper hits__slider">
                         <div class="swiper-wrapper"></div>
                     </div>
-                    <div class="swiper-button-next hits-button-next"></div><div class="swiper-button-prev hits-button-prev"></div>
+                    <div class="swiper-button-next hits-button-next"></div>
+                    <div class="swiper-button-prev hits-button-prev"></div>
                 </div>
             </section>
 
             <section class="recipes">
-                <div class="container recipes__container">
+                <div class="recipes__container">
                     <div class="recipes__header">
                         <h2 class="recipes__title">Рецепты от нас ›</h2>
                         <nav class="recipes__filter">
@@ -127,41 +124,66 @@
                     <div class="swiper recipes__slider">
                         <div class="swiper-wrapper"></div>
                     </div>
-                     <div class="swiper-button-next recipes-button-next"></div><div class="swiper-button-prev recipes-button-prev"></div>
+                    <div class="swiper-button-next recipes-button-next"></div>
+                    <div class="swiper-button-prev recipes-button-prev"></div>
                 </div>
             </section>
 
             <section class="geography" id="where-to-buy">
-                <div class="container geography__container">
-                    <div class="geography__content">
-                        <h2 class="geography__title">ГЕОГРАФИЯ ПРОДАЖ</h2>
-                        <p class="geography__description">Вы сможете наши продукты в таких регионах: Астраханская область, Ростовская область, Ставропольский край, Республика Кабардино-Балкария, Республика Северная Осетия-Алания, Волгоградская область</p>
-                        <a href="#" class="btn btn--outline geography__btn">Узнать подробнее</a>
-                        <div class="partner-logos">
-                            <a href="#" class="partner-logos__item"><img src="./assets/images/logo-magnit.png" alt="Магнит"></a>
-                            <a href="#" class="partner-logos__item"><img src="./assets/images/logo-perekrestok.png" alt="Перекресток"></a>
-                            <a href="#" class="partner-logos__item"><img src="./assets/images/logo-pyaterochka.png" alt="Пятерочка"></a>
-                            <a href="#" class="partner-logos__item"><img src="./assets/images/logo-ashan.png" alt="Ашан"></a>
-                            <a href="#" class="partner-logos__item"><img src="./assets/images/logo-okey.png" alt="Окей"></a>
-                            <a href="#" class="partner-logos__item"><img src="./assets/images/logo-lenta.png" alt="Лента"></a>
+                    <div class="geography__container">
+                        <div class="geography__content">
+                            <h2 class="geography__title">ГЕОГРАФИЯ ПРОДАЖ</h2>
+                            <p class="geography__description">Вы сможете наши продукты в таких регионах: Астраханская область, Ростовская область, Ставропольский край, Республика Кабардино-Балкария, Республика Северная Осетия-Алания, Волгоградская область</p>
+                            <a href="#" class="btn btn--outline geography__btn">Узнать подробнее</a>
+                            <div class="partner-logos">
+                                <a href="#" class="partner-logos__item"><img src="./assets/images/logo-magnit.png" alt="Магнит"></a>
+                                <a href="#" class="partner-logos__item"><img src="./assets/images/logo-perekrestok.png" alt="Перекресток"></a>
+                                <a href="#" class="partner-logos__item"><img src="./assets/images/logo-pyaterochka.png" alt="Пятерочка"></a>
+                                <a href="#" class="partner-logos__item"><img src="./assets/images/logo-ashan.png" alt="Ашан"></a>
+                                <a href="#" class="partner-logos__item"><img src="./assets/images/logo-okey.png" alt="Окей"></a>
+                                <a href="#" class="partner-logos__item"><img src="./assets/images/logo-lenta.png" alt="Лента"></a>
+                            </div>
+                        </div>
+                
+                        <div class="geography__lines">
+                            <svg viewBox="0 0 200 100" preserveAspectRatio="none">
+                                <path d="M0,50 C50,10 150,10 200,50" stroke="white" stroke-width="1.5" fill="none" stroke-dasharray="3 5" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                
+                        <div class="geography__map-wrapper">
+                            <img src="./assets/images/geography-map1.png" alt="Карта регионов продаж" class="geography__map-image">
+                            <img src="./assets/images/map-marker.png" alt="map marker" class="map-marker map-marker--1">
+                            <img src="./assets/images/map-marker.png" alt="map marker" class="map-marker map-marker--2">
+                            <img src="./assets/images/map-marker.png" alt="map marker" class="map-marker map-marker--3">
+                            <img src="./assets/images/map-marker.png" alt="map marker" class="map-marker map-marker--4">
+                            <img src="./assets/images/map-marker.png" alt="map marker" class="map-marker map-marker--5">
+                            <img src="./assets/images/map-marker.png" alt="map marker" class="map-marker map-marker--6">
+                            <img src="./assets/images/map-marker.png" alt="map marker" class="map-marker map-marker--7">
                         </div>
                     </div>
-                    <div class="geography__map-wrapper">
-                        <img src="./assets/images/geography-map.png" alt="Карта регионов продаж" class="geography__map-image">
-                    </div>
-                </div>
             </section>
 
+
             <section class="contacts-section" id="contacts">
-                <div class="container contacts-section__container">
-                  <h2 class="section-title section-title">КОНТАКТЫ</h2>
+                <div class="contacts-section__container">
+                    <h2 class="section-title section-title">КОНТАКТЫ</h2>
                     <div class="contacts-section__wrapper">
                         <div class="contacts-info">
                             <h3 class="contacts-info__title">Свяжитесь с нами</h3>
                             <div class="contacts-info__group">
-                                <div class="contacts-info__item"><div class="contacts-info__icon-wrapper"><svg viewBox="0 0 20 20"><path d="M10 2C6.69 2 4 4.69 4 8c0 4.17 6 10 6 10s6-5.83 6-10c0-3.31-2.69-6-6-6zm0 8c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/></svg></div><div class="contacts-info__details"><h4>Адрес</h4><p>г. Майкоп, ул. Транспортная, 5</p></div></div>
-                                <div class="contacts-info__item"><div class="contacts-info__icon-wrapper"><svg viewBox="0 0 20 20"><path d="M17.71 12.29l-2.5-2.5c-.39-.39-1.02-.39-1.41 0l-1.06 1.06c-1.22-.61-2.28-1.67-2.89-2.89l1.06-1.06c.39-.39.39-1.02 0-1.41l-2.5-2.5c-.39-.39-1.02-.39-1.41 0l-1.77 1.77c-.2.2-.27.48-.15.71 1.34 2.59 3.55 4.8 6.14 6.14.23.12.51.05.71-.15l1.77-1.77c.39-.39.39-1.03 0-1.42z"/></svg></div><div class="contacts-info__details"><h4>Приемная</h4><a href="tel:+78772536873">+7 (8772) 53 68 73</a><a href="mailto:info@molkom-adyg.ru">info@molkom-adyg.ru</a></div></div>
-                                <div class="contacts-info__item"><div class="contacts-info__icon-wrapper"><svg viewBox="0 0 20 20"><path d="M18 6V4H2v2h16zM2 16h16v-2H2v2zm16-7H2v2h16v-2z"/></svg></div><div class="contacts-info__details"><h4>Отдел продаж</h4><a href="tel:+78772569520">+7 (8772) 56 95 20</a><a href="tel:+78772530646">+7 (8772) 53 06 46</a><a href="mailto:otdelprod@molkom-adyg.ru">otdelprod@molkom-adyg.ru</a></div></div>
+                                <div class="contacts-info__item">
+                                    <div class="contacts-info__icon-wrapper"><svg viewBox="0 0 20 20"><path d="M10 2C6.69 2 4 4.69 4 8c0 4.17 6 10 6 10s6-5.83 6-10c0-3.31-2.69-6-6-6zm0 8c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/></svg></div>
+                                    <div class="contacts-info__details"><h4>Адрес</h4><p>г. Майкоп, ул. Транспортная, 5</p></div>
+                                </div>
+                                <div class="contacts-info__item">
+                                    <div class="contacts-info__icon-wrapper"><svg viewBox="0 0 20 20"><path d="M17.71 12.29l-2.5-2.5c-.39-.39-1.02-.39-1.41 0l-1.06 1.06c-1.22-.61-2.28-1.67-2.89-2.89l1.06-1.06c.39-.39.39-1.02 0-1.41l-2.5-2.5c-.39-.39-1.02-.39-1.41 0l-1.77 1.77c-.2.2-.27.48-.15.71 1.34 2.59 3.55 4.8 6.14 6.14.23.12.51.05.71-.15l1.77-1.77c.39-.39.39-1.03 0-1.42z"/></svg></div>
+                                    <div class="contacts-info__details"><h4>Приемная</h4><a href="tel:+78772536873">+7 (8772) 53 68 73</a><a href="mailto:info@molkom-adyg.ru">info@molkom-adyg.ru</a></div>
+                                </div>
+                                <div class="contacts-info__item">
+                                    <div class="contacts-info__icon-wrapper"><svg viewBox="0 0 20 20"><path d="M18 6V4H2v2h16zM2 16h16v-2H2v2zm16-7H2v2h16v-2z"/></svg></div>
+                                    <div class="contacts-info__details"><h4>Отдел продаж</h4><a href="tel:+78772569520">+7 (8772) 56 95 20</a><a href="tel:+78772530646">+7 (8772) 53 06 46</a><a href="mailto:otdelprod@molkom-adyg.ru">otdelprod@molkom-adyg.ru</a></div>
+                                </div>
                             </div>
                             <a href="#" class="contacts-info__all-link">Все контакты</a>
                         </div>
@@ -177,7 +199,7 @@
                                 <div class="feedback-form__group">
                                     <label for="user-phone">Ваш телефон</label>
                                     <input type="tel" id="user-phone" name="phone" placeholder="+7 (___) ___-__-__" required>
-                                     <span class="feedback-form__error-message">Пожалуйста, введите корректный номер</span>
+                                    <span class="feedback-form__error-message">Пожалуйста, введите корректный номер</span>
                                 </div>
                             </div>
                             <div class="feedback-form__group">
@@ -195,6 +217,7 @@
             <section class="map-section">
                 <div id="yandex-map" class="map-section__container"></div>
             </section>
+          </div>
         </main>
 
         <footer class="footer">
@@ -203,7 +226,7 @@
                     <div class="footer__about">
                         <img src="./assets/images/logo.png" alt="Логотип Молкомбинат Адыгейский" class="footer__logo">
                         <h3 class="footer__company-name">ЗАО «МОЛКОМБИНАТ «АДЫГЕЙСКИЙ»</h3>
-                        <p class="footer__description">Мы готовы предложить вам традиционные продукты под торговой маркой «Майкопская молочная продукция»: молоко, кефир, сметана, творог, ряженку, айран, которые отличаются небольшим сроком годности</p>
+                        <p class="footer__description">Мы готовы предложить вам традиционные продукты под торговой маркой «Майкопская молочная продукция»: молоко, кефир, сметану, творог, ряженку, айран, которые отличаются небольшим сроком годности</p>
                         <div class="footer__socials">
                             <a href="#" class="footer__social-link footer__social-link--telegram" aria-label="Телеграм"><img src="./assets/images/TelegramFill.svg" alt="Telegram"></a>
                             <a href="#" class="footer__social-link footer__social-link--vk" aria-label="ВКонтакте"><img src="./assets/images/SocialVkontakte.svg" alt="ВКонтакте"></a>
@@ -212,20 +235,40 @@
                     <nav class="footer__nav">
                         <h3 class="footer__nav-title">НАВИГАЦИЯ</h3>
                         <ul class="footer__nav-list">
-                            <li><a href="#home">Главная</a></li><li><a href="#catalog">Каталог</a></li><li><a href="#about">О заводе</a></li><li><a href="#where-to-buy">Где купить</a></li><li><a href="#">Вакансии</a></li><li><a href="#contacts">Контакты</a></li>
+                            <li><a href="#home">Главная</a></li>
+                            <li><a href="#catalog">Каталог</a></li>
+                            <li><a href="#about">О заводе</a></li>
+                            <li><a href="#where-to-buy">Где купить</a></li>
+                            <li><a href="#">Вакансии</a></li>
+                            <li><a href="#contacts">Контакты</a></li>
                         </ul>
                     </nav>
                     <div class="footer__products">
                         <h3 class="footer__nav-title">ПРОДУКЦИЯ</h3>
                         <ul class="footer__nav-list">
-                            <li><a href="#">Айран</a></li><li><a href="#">Мацони</a></li><li><a href="#">Сыры</a></li><li><a href="#">Молоко</a></li><li><a href="#">Кефир</a></li><li><a href="#">Ряженка</a></li><li><a href="#" class="footer__link--highlight">Смотреть всё</a></li>
+                            <li><a href="#">Айран</a></li>
+                            <li><a href="#">Мацони</a></li>
+                            <li><a href="#">Сыры</a></li>
+                            <li><a href="#">Молоко</a></li>
+                            <li><a href="#">Кефир</a></li>
+                            <li><a href="#">Ряженка</a></li>
+                            <li><a href="#" class="footer__link--highlight">Смотреть всё</a></li>
                         </ul>
                     </div>
                     <div class="footer__contacts-info">
                         <h3 class="footer__nav-title">КОНТАКТЫ</h3>
-                        <div class="contacts-info__item"><div class="contacts-info__icon-wrapper"><svg viewBox="0 0 20 20"><path d="M10 2C6.69 2 4 4.69 4 8c0 4.17 6 10 6 10s6-5.83 6-10c0-3.31-2.69-6-6-6zm0 8c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/></svg></div><div class="contacts-info__details"><h4>Адрес</h4><p>г. Майкоп, ул. Транспортная, 5</p></div></div>
-                        <div class="contacts-info__item"><div class="contacts-info__icon-wrapper"><svg viewBox="0 0 20 20"><path d="M17.71 12.29l-2.5-2.5c-.39-.39-1.02-.39-1.41 0l-1.06 1.06c-1.22-.61-2.28-1.67-2.89-2.89l1.06-1.06c.39-.39.39-1.02 0-1.41l-2.5-2.5c-.39-.39-1.02-.39-1.41 0l-1.77 1.77c-.2.2-.27.48-.15.71 1.34 2.59 3.55 4.8 6.14 6.14.23.12.51.05.71-.15l1.77-1.77c.39-.39.39-1.03 0-1.42z"/></svg></div><div class="contacts-info__details"><h4>Приемная</h4><a href="tel:+78772536873">+7 (8772) 53 68 73</a><a href="mailto:info@molkom-adyg.ru">info@molkom-adyg.ru</a></div></div>
-                        <div class="contacts-info__item"><div class="contacts-info__icon-wrapper"><svg viewBox="0 0 20 20"><path d="M18 6V4H2v2h16zM2 16h16v-2H2v2zm16-7H2v2h16v-2z"/></svg></div><div class="contacts-info__details"><h4>Отдел продаж</h4><a href="tel:+78772569520">+7 (8772) 56 95 20</a><a href="tel:+78772530646">+7 (8772) 53 06 46</a><a href="mailto:otdelprod@molkom-adyg.ru">otdelprod@molkom-adyg.ru</a></div></div>
+                        <div class="contacts-info__item">
+                            <div class="contacts-info__icon-wrapper"><svg viewBox="0 0 20 20"><path d="M10 2C6.69 2 4 4.69 4 8c0 4.17 6 10 6 10s6-5.83 6-10c0-3.31-2.69-6-6-6zm0 8c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/></svg></div>
+                            <div class="contacts-info__details"><h4>Адрес</h4><p>г. Майкоп, ул. Транспортная, 5</p></div>
+                        </div>
+                        <div class="contacts-info__item">
+                            <div class="contacts-info__icon-wrapper"><svg viewBox="0 0 20 20"><path d="M17.71 12.29l-2.5-2.5c-.39-.39-1.02-.39-1.41 0l-1.06 1.06c-1.22-.61-2.28-1.67-2.89-2.89l1.06-1.06c.39-.39.39-1.02 0-1.41l-2.5-2.5c-.39-.39-1.02-.39-1.41 0l-1.77 1.77c-.2.2-.27.48-.15.71 1.34 2.59 3.55 4.8 6.14 6.14.23.12.51.05.71-.15l1.77-1.77c.39-.39.39-1.03 0-1.42z"/></svg></div>
+                            <div class="contacts-info__details"><h4>Приемная</h4><a href="tel:+78772536873">+7 (8772) 53 68 73</a><a href="mailto:info@molkom-adyg.ru">info@molkom-adyg.ru</a></div>
+                        </div>
+                        <div class="contacts-info__item">
+                            <div class="contacts-info__icon-wrapper"><svg viewBox="0 0 20 20"><path d="M18 6V4H2v2h16zM2 16h16v-2H2v2zm16-7H2v2h16v-2z"/></svg></div>
+                            <div class="contacts-info__details"><h4>Отдел продаж</h4><a href="tel:+78772569520">+7 (8772) 56 95 20</a><a href="tel:+78772530646">+7 (8772) 53 06 46</a><a href="mailto:otdelprod@molkom-adyg.ru">otdelprod@molkom-adyg.ru</a></div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -243,4 +286,5 @@
 
     </div>
 </body>
+
 </html>

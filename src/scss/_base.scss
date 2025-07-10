@@ -1,9 +1,7 @@
 @use 'variables' as *;
 @use 'mixins' as *;
 
-// Подключение шрифтов
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Nunito+Sans:wght@400;600&family=Inter:wght@400;500;600&display=swap');
-// @font-face { ... }
 
 * {
     box-sizing: border-box;
@@ -16,7 +14,7 @@ body {
     font-size: 16px;
     line-height: 1.6;
     color: $color-text-dark;
-    background-color: #fdfdfd; 
+    background-color: #f0f2f5;
     overflow-x: hidden;
 }
 
@@ -43,19 +41,25 @@ ul {
 }
 
 .main {
-    background-color: $color-white;
+    background-color: transparent;
+    padding: 40px 0;
 }
 
-// Анимации появления
-.hero, .popular, .traditions, .hits, .recipes, .geography, .contacts-section {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+.main__container {
+    max-width: 1800px;
+    margin: 0 auto;
+    padding: 0 30px;
 }
 
-.hero.in-view, .popular.in-view, .traditions.in-view, .hits.in-view, .recipes.in-view, .geography.in-view, .contacts-section.in-view {
-    opacity: 1;
-    transform: translateY(0);
+.main__container > section {
+    border-radius: 40px;
+    margin-bottom: 30px; 
+    box-shadow: 0 15px 40px -20px rgba(41, 74, 128, 0.2);
+    overflow: hidden;
+
+    &:last-of-type {
+        margin-bottom: 0;
+    }
 }
 
 img {
@@ -64,22 +68,14 @@ img {
     display: block;
 }
 
-@media (max-width: $breakpoint-sm) {
-    .container {
-        padding: 0 20px;
-    }
-}
-
-/* ОБНОВЛЕННЫЙ ОБЩИЙ КЛАСС ДЛЯ ЗАГОЛОВКОВ */
 .section-title {
-    font-size: 36px;
+    font-family: 'Clip', $font-headings;
+    font-size: 42px;
+    font-weight: 400;
+    letter-spacing: 0.02em;
     color: $color-text-dark;
+    margin-bottom: 50px;
     text-align: center;
-    margin-bottom: 60px;
-    font-family: 'Clip', $font-headings; // Добавим шрифт для консистентности
-    font-weight: 400;                 // Добавим font-weight для консистентности
-    letter-spacing: 0.02em;           // Добавим letter-spacing для консистентности
-
 
     &--left {
         text-align: left;
@@ -94,10 +90,22 @@ img {
     }
 }
 
-/* Адаптивность для заголовков */
 @media (max-width: $breakpoint-sm) {
+    .container, .main__container {
+        padding: 0 20px;
+    }
+    
+    .main {
+        padding: 20px 10px;
+    }
+
+    .main__container > section {
+        border-radius: 20px;
+        margin-bottom: 20px;
+    }
+
     .section-title {
-        font-size: 28px;
+        font-size: 32px;
         margin-bottom: 40px;
     }
 }

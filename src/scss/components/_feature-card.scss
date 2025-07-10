@@ -1,39 +1,77 @@
 @use '../variables' as *;
 
 .feature-card {
-    background: rgba(255, 255, 255, 0.15);
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 20px;
-    padding: 25px 20px;
-    text-align: center;
-    color: $color-white;
+    background-color: #ffffff;
+    border-radius: 30px;
+    padding: 25px;
+    color: $color-text-dark;
     flex: 1;
-    min-width: 220px; 
-    transition: background 0.3s ease;
+    min-width: 180px; 
+    height: 160px; 
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
 
-    &:hover { background: rgba(255, 255, 255, 0.25); }
+    &::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 55%;
+        background-color: $color-white;
+        z-index: 1;
+        
+        -webkit-clip-path: path('M0,100% L100%,100% L100%,25% C90%,-5% 10%,-5% 0,25% Z');
+        clip-path: path('M0,100% L100%,100% L100%,25% C90%,-5% 10%,-5% 0,25% Z');
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 110px;
+        height: 110px;
+        z-index: 0;
+
+        -webkit-mask-image: url('../assets/images/feature-blob-shape.png');
+        mask-image: url('../assets/images/feature-blob-shape.png');
+        -webkit-mask-size: contain;
+        mask-size: contain;
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+    }
+    
+    &:nth-child(1)::after { background-color: lighten($bg-blue, 0%); }
+    &:nth-child(2)::after { background-color: $bg-beige; }
+    &:nth-child(3)::after { background-color: lighten($bg-green, 0%); }
 }
-.feature-card__icon-wrapper {
+
+.feature-card__icon {
     width: 50px;
     height: 50px;
-    margin: 0 auto 15px auto;
-    background: radial-gradient(circle, #FFFFFF 0%, rgba(255, 255, 255, 0.5) 100%);
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    position: absolute;
+    top: 15px;
+    left: 25px;
+    z-index: 2;
 }
-.feature-card__icon {
-    height: 24px;
-    width: 24px;
-    path { fill: $color-blue; }
-}
+
 .feature-card__title {
-    font-size: 16px;
+    position: absolute;
+    bottom: 15px;
+    left: 25px;
+    right: 25px;
+    z-index: 2;
+    font-size: 16px; 
     line-height: 1.4;
     font-weight: 600;
     font-family: 'Inter', $font-main;
     margin: 0;
+    text-align: left; 
 }
